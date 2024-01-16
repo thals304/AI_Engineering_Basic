@@ -7,8 +7,12 @@ AI 엔지니어 기초 다지기
 
 2024.01.05 ~ 2024.02.27
 
-## 01boostclass
+## 01boostclass : numpy & pandas
 
-numpy
+**numpy**
 
-pandas
+**pandas**
+
+## 02boostclass : 정형데이터
+
+**정형데이터 분류 베이스라인 모델 1**
