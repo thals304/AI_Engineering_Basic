@@ -52,7 +52,42 @@ AI 엔지니어 기초 다지기
 
     → 어떤 모델로 train, valid, test ?
 
-  
+- **평가지표 이해**
+    - **분류(Classification)**
+        
+        예측해야할 대상의 개수가 정해져 있는 문제
+        
+        ex) 이미지에서 개, 고양이 분류 / 신용카드 거래가 사기 거래인지 정상 거래인지 분류 등
+        
+    - **회귀(Regression)**
+        
+        예측해야할 대상이 연속적인 숫자인 문제
+        
+        ex) 일기 예보에서 내일의 기온 예측, 주어진 데이터에서 집값 예측
+        
+    - **평가지표(Evaluation Metric)**
+        
+        분류, 회귀 머신러닝 문제의 성능을 평가할 지표
+      
+    +) **분류 문제** 
+
+    **Confusion Matrix**
+
+    1. Accuracy : (TP + TN) / (TP + TN + FP + FN)
+    2. Precision : TP / (TP + FP)
+    3. Recall : TP / (TP + FN)
+
+    **ROC**
+
+    True Positive Ratio : TP / (TP + FN)
+
+    False Positive Ratio : FP / (FP + TN)
+
+    **AUC** 
+
+    ROC 곡선의 면적을 표시한 것 
+
+    [0~1] 범위로 1에 가까우면 잘 예측한 것 0에 가까우면 잘 예측 못한 것
 
 ### 정형데이터 분류 베이스라인 모델 1
 
