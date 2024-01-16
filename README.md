@@ -1,7 +1,5 @@
 # AI_Engineering_Basic
-**[naver connect] boostcourse**
-
-AI 엔지니어 기초 다지기
+**[naver connect] boostcourse - AI 엔지니어 기초 다지기**
 
 ## 👩‍🎓스터디 기간
 
