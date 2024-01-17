@@ -5,6 +5,14 @@
 
 2024.01.05 ~ 2024.02.27
 
+## ⚙️개발 환경
+
+- Phython 3.12.1
+
+- anaconda3 1.12.1
+
+- jupyter notebook 6.5.4
+
 ## 01boostclass : numpy & pandas
 
 **numpy**
