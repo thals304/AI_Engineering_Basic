@@ -7,11 +7,9 @@
 
 ## ⚙️개발 환경
 
-- Phython 3.12.1
-
 - anaconda3 1.12.1
 
-- jupyter notebook 6.5.4
+- jupyter notebook 6.5.4 (Phython 3.12.1)
 
 ## 01boostclass : numpy & pandas
 
@@ -94,6 +92,8 @@
     ROC 곡선의 면적을 표시한 것 
 
     [0~1] 범위로 1에 가까우면 잘 예측한 것 0에 가까우면 잘 예측 못한 것
+
+## 03boostclass : EDA
 
 
 
