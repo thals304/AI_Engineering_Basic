@@ -211,3 +211,33 @@
         - **성능적인 측면**
             
             Train Test Distribution
+## 04boostclass : 머신러닝 기본 개념
+
+- **Underfitting & Overfitting**
+    - **Underfitting** : 데이터를 설명하지 못함
+    - **Overfitting** : 데이터를 과하게 설명함 
+    full dataset = our dataset 일 때
+- **Regulaization**
+    - overfitting 을 규제하는 방법
+        - Early stopping : 적정선 선택
+        - Parameter norm penalty
+        - Data augmentation : 데이터를 의도적으로 증가시킴
+        - SMOTE : inbalance data를  기준으로 근처 데이터 생성
+        - Dropout : feature 일부분만 사용
+- **Validation strategy**
+    - test dataset은 project 결과물과 직결되는 가장 중요한 set
+    - validation은 내가 만들고 있는 머신러닝 모델을 test dataset에 적용하기 전에 모델의 성능을 파악하기 위해 선정하는 dataset
+    - validation dataset 은 test dataset과 거의 유사하게 구성하는 것이 좋음 (test dataset은 full dataset과 유사하게 만드는 것이 좋음)
+    - but, test dataset 정보를 얻을 수 없는 경우도 있음
+    - training dataset은 머신러닝 모델이 보고 학습하는 dataset
+- **Hold-Out Validation** : 하나의 train과 validation을 사용
+    - random sampling
+    - Stratified split ( 8 : 2 , 7 : 3)
+- **Cross Validation**
+    - 여러 개의 train과 validation을 사용
+    - Stratified K-Fold ( 8 : 2 , 7 : 3)
+    - Group K-Fold
+    - Time series split
+- **Reproducibility**
+    - Fix seed
+- **Machine learning workflow**
