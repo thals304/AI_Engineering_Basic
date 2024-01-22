@@ -240,4 +240,44 @@
     - Time series split
 - **Reproducibility**
     - Fix seed
-- **Machine learning workflow**
+- **Machine learning workflow (머신러닝 작업 절차)**
+    - 데이터 추출 후 모델링 과정 전단계
+        - Data preprocessing
+        - Feature scaling
+        - Feature selection
+
+## 05boostclass : 트리 모델
+
+- **트리 모델의 기초 의사결정나무**
+    - 칼럼(feature) 값들을 어떠한 기준으로 group을 나누어 목적에 맞는 의사결정을 만드는 방법
+    - 하나의 질문으로 yes or no로 decision을 내려서 분류
+- **트리 모델의 발전**
+    
+    Decision Tree → Random Forest → AdaBoost → GBM
+    
+- **Bagging & Boosting**
+    - 여러 개의 decision tree를 이용하여 모델 생성
+    - **Bagging**
+        - 데이터 셋을 샘플링 하여 모델을 만들어 나가는 것이 특징
+        - 샘플링한 데이터 셋을 하나로 하나의 Decision Tree가 생성
+        - 생성한 Decision Tree의 Decision들을 취합하여 하나의 Decision생성
+        - Bagging = Booststrap + Aggregation
+        
+        // Boostrap : Data를 여러 번 sampling
+        
+        // Aggregation : 종합(Ensemble)
+        
+    - **Boosting**
+        - 초기의 랜덤하게 선택된 boostset를 사용하여 하나의 tree를 만들고 잘 맞추지 못한 data에 wait을 부여해 다음 tree를 만들 때 영향을 주어 다음 tree에서는 잘 맞출 수 있게 함
+    
+- **LightGBM, XGBoost, CatBoost**
+    - XGBoost, CatBoost - 균형적 구조
+    - LightGBM - 비균형적 구조
+- **Tree model hyper-parameter**
+    - hyper - parameter
+
+## 06boostclass & 07boostclass : 캐글러가 되자 - housing data
+
+## 08boostclass : 피처 엔지니어링
+
+**Feature Engineering** : 원본 데이터로부터 도메인 지식 등을 바탕으로 문제를 해결하는데 도움이 되는 Feature를 생성, 변환하고 이를 머신 러닝 모델에 적합한 형식으로 변환하는 작업
