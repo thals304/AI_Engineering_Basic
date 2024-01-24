@@ -281,3 +281,34 @@
 ## 08boostclass : 피처 엔지니어링
 
 **Feature Engineering** : 원본 데이터로부터 도메인 지식 등을 바탕으로 문제를 해결하는데 도움이 되는 Feature를 생성, 변환하고 이를 머신 러닝 모델에 적합한 형식으로 변환하는 작업
+
+## 10boostclass : 하이퍼 파라미터 튜닝
+
+- **하이퍼 파라미터 튜닝**
+    - **하이퍼 파라미터 튜닝이란?**
+        - **하이퍼 파라미터** : 학습 과정에서 컨트롤 하는 파라미터 value
+        - **하이퍼 파라미터 튜닝** : 하이퍼 파라미터를 최적화 하는 과정
+        - **하이퍼 파라미퍼 튜닝 방법**
+            - **Manual Search** : 자동화 툴을 사용하지 않고 메뉴얼하게 실험할 하이퍼 파라미터 셋을 정하고 하나씩 바꿔가면서 테스트 해보는 방식
+            - **Grid Search :** 테스트 가능한  모든 하이퍼 파라미터 set을 하나씩 테스트해보면서 어떤 파라미터 set이 성능이 좋은지 기록하는 방식
+            - **Random Search** : 탐색 가능한 하이퍼 파라미터를 랜덤하게 선택해 테스트 하는 방식
+            - **Bayesian optimization** : 랜덤하게 하이퍼 파라미터 선택하다가 이전 성능이 잘 나온 하이퍼 파라미터를 영역을 집중적으로 탐색해서 성능이 잘 나온 구간의 하이퍼 파라미터를 선택하는 방식
+    - **Boosting Tree 하이퍼 파라미터**
+    - **Optuna 소개**
+        - 오픈소스 하이퍼 파라미터 튜닝 프레임워크
+        - 주요 기능
+            - Eager search spaces
+                - Automated search for optimal hyperparameters using Python conditionals, loops, and syntax
+            - State-of-the-art algorithms
+                - Efficiently search large spaces and prune unpromising trials for faster results
+            - Easy parallelization
+                - Parallelize hyperparameter searches over multiple threads or processes without modifying code
+        - Optuna 하이퍼 파라미터 탐색 결과 저장
+            - storage API를 사용해서 하이퍼 파라미터 검색 결과 저장 가능
+            - RDB, Redis와 같은 Persistent 저장소에 하이퍼 파라미터 탐색 결과를 저장함으로써 한 번 탐색하고, 다음에 다시 이어서 탐색 가능
+        - Optuna 하이퍼 파라미터 Visualization
+            - 하리퍼 파라미터 히스토리 Visualization
+            - 하이퍼 파라미터 Slice Visualization
+            - 하이퍼 파라미터 Contour Visualization
+            - 하이퍼 파라미터 Parallel Coordinate Visualization
+    - **하이퍼 파라미터 튜닝 코드 실습**
