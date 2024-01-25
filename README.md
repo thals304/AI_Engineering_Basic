@@ -296,7 +296,7 @@
     - **Boosting Tree 하이퍼 파라미터**
     - **Optuna 소개**
         - 오픈소스 하이퍼 파라미터 튜닝 프레임워크
-        - 주요 기능
+        - **주요 기능**
             - Eager search spaces
                 - Automated search for optimal hyperparameters using Python conditionals, loops, and syntax
             - State-of-the-art algorithms
@@ -312,3 +312,63 @@
             - 하이퍼 파라미터 Contour Visualization
             - 하이퍼 파라미터 Parallel Coordinate Visualization
     - **하이퍼 파라미터 튜닝 코드 실습**
+
+## 11boostclass : 앙상블
+
+- **앙상블 러닝 (Ensemble learning)**
+    - 여러 개의 결정 트리를 결합하여 하나의 결정 트리보다 더 좋은 성능을 내는 머신러닝 기법
+    - 앙상블 학습의 핵심은 여러 개의 약 분류기(Weak Classifier)를 결합하여 강 분류기(Strong Classifier) 만드는 과정
+    - 여러 개의 단일 모델들의 평균치를 내거나, 투표를 해서 다수결에 의한 결정을 하는 등 여러 모델들의 집단 지성을 활용하여 더 나은 결과를 도출해 내는 것에 주 목적이 있음
+    - **장점**
+        - 성능을 분산시키기 때문에 Overfitting 감소 효과
+        - 개별 모델 성능이 잘 안 나올 때 앙상블 학습을 이용하면 성능이 향상될 수 있음
+    - **기법**
+        - **Bagging** - Boostrap Aggregation(샘플을 다양하게 생성)
+            - 훈련세트에서 중복을 허용하여 샘플링하는 방식
+            - +) Pasting : 중복을 허용하지 않고 샘플링하는 방식
+        - **Voting(투표)** - 투표를 통해 결과 도출
+            - 다른 알고리즘 model을 조합해서 사용 vs Bagging은 같은 알고리즘 내에서 다른 Sample 조합
+            - Voting은 서로 다른 알고리즘이 도출해 낸 결과물에 대하여 최종 투표하는 방식
+            - hard vote와 soft vote로 나뉨
+            - hard vote는 결과물에 대한 최종 값을 투표해서 결정(다수결 원칙과 비슷)하고, soft vote는 최종 결과물이 나올 확률 값을 다 더해서 최종 결과물에 대한 각각의 확률을 구한 뒤 최종 값을 도출
+        - **Boosting** - 이전 오차를 보완하며 가중치 부여
+        - **Stacking**
+            - 여러 모델들을 활용해 각각의 예측 결과를 도출한 뒤 그 예측 결과를 결합해 최종 예측 결과를 만들어 내는 것
+- **Tree 계열 알고리즘 설명**
+    - **Decision Tree : Impurity**
+        - 해당 노드 안에서 섞여 있는 정도가 높을수록 복잡성이 높고, 덜 섞여 있을수록 복잡성이 낮음
+        - Impurity를 측정하는 측도에는 다양한 종류가 있는데, Entropy와 Gini에 대해서만 알아볼 것
+    - **Decision Tree :  Gini Index**
+        - 불순도를 측정하는 지표로서, 데이터의 통계쩍 분산정도를 정량화해서 표현한 값
+    - **Decision Tree : Graphviz**
+    - **Gradient Boosting : Pseudo code**
+    - **XGBoost**
+        - XGBoost는 Gradient Boosting에 Regularization term을 추가한 알고리즘
+        - 다양한 Loss function을 지원해 task에 따른 유연한 튜닝이 가능하다는 장점
+    - **LightGBM**
+        - Level-wise growth(XGBoost)의 경우 트리의 깊이를 줄이고 균형있게 만들기 위해 root 노드와 가까운 노드를 우선적으로 순회하여 수평성장하는 방법
+        - leaf-wise tree growth(LighGBM)의 경우 loss 변화기 가장 큰 노드에서 분할하여 성장하는 수직 성장 방식
+        - **GOSS : Gradient-based One-Side Sampling**
+            - 기울기가 큰 데이터 개체 정보 획득에 있어 더욱 큰 역할을 한다는 아이디어에 입각해 만들어진 테크닉, 작은 기울기를 갖는 데이터 개체들을 일정 확률에 의해 랜덤하게 제거
+        - **EFB : Exclusive Feature Bunding**
+            - 변수 개수를 줄이기 위해 상호 배타적인 변수들을 묶는 기법
+    - **Catboost**
+        - 순서형 원칙(Ordered Principle)을 제시
+            - Target leakage를 피하는 표준 그래디언트 부스팅 알고리즘을 수정하고 범주형 Feature를 처리하는 새로운 알고리즘
+        - Random Permutation
+            - 데이터를 셔플링하여 뽑아냄
+        - 범주형 feature 처리 방법
+            - ordered Target Encoding
+            - Categorical Feature Combinations
+            - One-Hot Encoding
+        - Optimized Parameter Tuning
+- **TabNet**
+    - TabNet은 전처리 과정이 필요하지 않음
+    - 정형 데이터에 대해서는 기존의 Decision tree-based gradient boosting(xgboost, lgbm, catboost)와 같은 모델에 비해 신경망 모델은 아직 성능이 안정적이지 못함. 두 구조의 장점을 모두 갖는 신경망 모델
+    - Feature selection, interpretability(local, global)가 가능한 신경망 모델, 설명가능한 모델
+    - feature 값을 예측하는 Unsupervised pretrain 단계를 적용하여 상당한 성능 향상을 보여줌
+    - Tabular Data를 위한 딥러닝 모델 TabNet
+        - TabNet은 순차적인 어텐션(Sequentital Attention)을 사용하여 각 의사 결정 단계에서 추론할 특징을 선택하여 학습 능력이 가장 두드러진 특징을 사용
+        - 기존 머신러닝 방법에서는 이러한 특징 선택과 모델 학습의 과정이 나누어져 있지만, TabNet에서는 한 번에 가능
+        - 특징 선택이 이루어지므로 어떠한 특징인지 설명이 가능함
+  
