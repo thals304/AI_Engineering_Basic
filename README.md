@@ -278,6 +278,8 @@
 
 ## 06boostclass & 07boostclass : 캐글러가 되자 - housing data
 
+> **Project**
+
 ## 08boostclass : 피처 엔지니어링
 
 **Feature Engineering** : 원본 데이터로부터 도메인 지식 등을 바탕으로 문제를 해결하는데 도움이 되는 Feature를 생성, 변환하고 이를 머신 러닝 모델에 적합한 형식으로 변환하는 작업
@@ -373,3 +375,5 @@
         - 특징 선택이 이루어지므로 어떠한 특징인지 설명이 가능함
 
   ## 12boostclass & 13boostclass : 캐글러에 일단 제출해보자
+
+  > **Project**
