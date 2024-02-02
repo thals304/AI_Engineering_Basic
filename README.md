@@ -1,7 +1,7 @@
 # AI_Engineering_Basic
 **[naver connect] boostcourse - AI 엔지니어 기초 다지기**
 
-<img src=".png" width="50" height="50"/>
+<img src="https://github.com/thals304/AI_Engineering_Basic/assets/126967336/8c6f3134-61cc-451b-94cc-cb5489ae43c7.png" width="300" height="400"/>
 
 ## ⏱️스터디 기간
 
