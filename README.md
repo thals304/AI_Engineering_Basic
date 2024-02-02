@@ -378,8 +378,8 @@
 
   > **Project**
 
-## 14boostclass & 15boostclass : 경사하강법
+  ## 14boostclass & 15boostclass : 경사하강법
 
-> **Project**
+  > **Project**
 
-## 16boostclass : 머신러닝의 이해
+  ## 16boostclass : 머신러닝의 이해
