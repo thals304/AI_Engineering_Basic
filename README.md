@@ -377,3 +377,9 @@
   ## 12boostclass & 13boostclass : 캐글러에 일단 제출해보자
 
   > **Project**
+
+## 14boostclass & 15boostclass : 경사하강법
+
+> **Project**
+
+## 16boostclass : 머신러닝의 이해
