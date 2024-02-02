@@ -382,4 +382,6 @@
 
   > **Project**
 
-  ## 16boostclass : 머신러닝의 이해
+  ## 16boostclass : 딥러닝 학습방법 이해하기
+
+  
