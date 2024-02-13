@@ -388,6 +388,14 @@
 
   ## 20boostclass & 21boostclass : 딥러닝 기초
 
+  - **딥러닝 기본 용어 설명**
+    - 인공지능 : 사람의 지능을 모방 **>** 머신러닝  : data로 접근 **>** **딥러닝 : neural networks 구조 활용**
+    - **딥러닝의 주요 요소 4가지**
+        - the **data** that the model can learn from
+        - the **model** how to transform the data
+        - the **loss function** that quantifies the badness of the model
+        - the **algorithm** to adjust the parameters to minimize the loss
+
   ## 22boostclass & 23boostclass : 최적화
   
  
