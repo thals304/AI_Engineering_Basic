@@ -386,4 +386,9 @@
 
   ## 16boostclass : 딥러닝 학습방법 이해하기
 
+  ## 20boostclass & 21boostclass : 딥러닝 기초
+
+  ## 22boostclass & 23boostclass : 최적화
+  
+ 
   
