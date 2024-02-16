@@ -414,7 +414,5 @@
           - the **algorithm** to adjust the parameters to minimize the loss
 
   ## 22boostclass & 23boostclass : 최적화
-
-  
  
   
