@@ -415,6 +415,30 @@
 
   ## 22boostclass & 23boostclass : 최적화
 
+    - **최적화의 주요 용어 정리하기**
+      - **Generalization**
+      - Training error와 Test error의 차이
+      - **Under- fitting vs over-fitting**
+          - Over-fitting : 학습 데이터에 대해 잘 동작하지만 테스트 데이터에 대해서는 잘 동작하지 않는 현상
+      - **Cross validation**
+          - Cross-validation is a model validation technique for assessing how the model will generalize to an independent (test) data set
+      - **Bias-Variance tradeoff**
+      - **Bootstrapping**
+          - Bootstrapping is any test or metric that uses random sampling with replacement
+      - **Bagging and boosting**
+          - Bagging ( Bootstrapping aggregating)
+              - Multiple models are being trained with bootstrapping
+              - ex) Base classifiers are fitted on random subset where individual predictions are aggregated(voting or averaging)
+          - Boosting
+              - It focuses on specific training samples that are hard to classify
+              - A strong model is built by combining weak learners in sequence where each learner learns from the mistakes of the previous weak learner
+    - **Gradient Descent Methods**
+      - Stochastic gradient descent
+          - Update with the gradient computed from a single sample
+      - Mini-batch gradient descent
+          - Update with the gradient computed from a subset of data
+      - Batch gradient descent
+          - Update with the gradient computed from the whole data
   ## 24boostclass & 25boostclass
 
   > project
