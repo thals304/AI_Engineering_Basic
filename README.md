@@ -439,7 +439,27 @@
           - Update with the gradient computed from a subset of data
       - Batch gradient descent
           - Update with the gradient computed from the whole data
-  ## 24boostclass & 25boostclass
+    - **Regularization**
+      - **Early stopping**
+          - early stopping을 위해 additional validation data가 필요함
+      - **Parameter norm penalty**
+          - It adds smoothness to the function space
+      - **Data augmentation**
+          - More data are always welcomed
+          - However, in most cases, training data are given in advance
+          - In such cases, we need data augmentation
+      - **Noise Robustness**
+          - Add random noises inputs or weights
+      - **Label Smoothing**
+          - **Mix-up** constructs augmented training examples by mixing both input and output of two randomly selected training data
+          - **CutMix** constructs augmented training examples by mixing inputs with cut paste and outputs with soft labels of two randomly selected training data
+      - **Dropout**
+          - In each forward pass, randomly set some neurons to zero
+      - **Batch normalization**
+          - Batch normalization compute the empirical mean and variance independently for each dimension (layers) and normalize
+          - There are different variances of normalization
+            
+  ## 24boostclass & 25boostclass : 2-layer 인공신경망 구하기
 
   > project
   
