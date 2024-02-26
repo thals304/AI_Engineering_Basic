@@ -463,3 +463,4 @@
 
   > project
   
+ ## 29boostclass : 딥러닝 모델 구현하기 
