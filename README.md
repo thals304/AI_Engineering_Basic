@@ -459,8 +459,18 @@
           - Batch normalization compute the empirical mean and variance independently for each dimension (layers) and normalize
           - There are different variances of normalization
             
-  ## 24boostclass & 25boostclass : 2-layer 인공신경망 구하기
+  ## 23boostclass & 24boostclass : 2-layer 인공신경망 구하기
 
   > project
+
+  ## 25boostclass : CNN - Convloution은 무엇인가?
+
+  ## 26boostclass : Computer Vision Aplications
+
+  ## 27boostclass : Sequential Model - RNN & Transformer
+
+  ## 28boostclass : Generative Models
   
- ## 29boostclass : 딥러닝 모델 구현하기 
+  ## 29boostclass : 딥러닝 모델 구현하기
+
+  > project
