@@ -465,7 +465,7 @@
 
   ## 25boostclass : CNN - Convloution은 무엇인가?
 
-  - **Convolutional Neural Networks은 무엇인가?**
+- **Convolutional Neural Networks은 무엇인가?**
     - CNN consists of convolution layer, pooling layer, and fully connected layer
     - Convolution and pooling layers : feature extraction
     - Fully connected layer : decision making (e.g., classification)
