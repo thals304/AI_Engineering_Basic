@@ -465,6 +465,55 @@
 
   ## 25boostclass : CNN - Convloution은 무엇인가?
 
+  - **Convolutional Neural Networks은 무엇인가?**
+    - CNN consists of convolution layer, pooling layer, and fully connected layer
+    - Convolution and pooling layers : feature extraction
+    - Fully connected layer : decision making (e.g., classification)
+        - Stride
+        - Padding
+    - 1 x 1 convolution
+        - 이미지에서 한 픽셀만 보고 채널 방향으로 줄이는 것
+        - why? dimension reduction
+        - To reduce the number of parameters while increasing the depth
+- **Modern CNN - 1 x 1 convolution의 중요성**
+    - depth는 깊어지는데 parameter 개수가 줄고 있는  테크닉에 집중
+    - **ILSVRC**
+        - ImageNet Large-Scale Visual Recognition Challenge
+        - Classification / Detection / Localization / Segmenatation
+        - 1,000 different categories
+        - Over 1 million images
+        - Training set : 456,567 images
+        - **key ideas**
+            - **RELU (Rectified Linear Unit) activation**
+                - Preserve properties of linear models
+                - Easy to optimize with gradient descent
+                - Overcome the vanishing gradient problem
+            - GPU implementation (2 GPUs)
+            - Local response normalization, Overlapping pooling
+            - Data augmentation
+            - Dropout
+    - **VGGNet**
+        - Increasing depth with **3 x 3 convolution** filters (with stride 1)
+            - **why? Receptive field**
+        - 1 x 1 convolution for fully connected layers
+        - Dropout (p = 0.5)
+        - VGG16, VGG19
+    - **GoogleNet**
+        - **Inception Block**
+            - Reduce the number of parameter
+            - How ? Recall how the number of parameters is computed
+            **1 x 1 convolution** can be seen as channel-wise dimension reduction
+    - **ResNet**
+        - Deeper neural networks are hard to train
+            - Overfitting is usually caused by an excessive number of parameters
+        - Add an identity map **after** nonlinear activations
+        - Batch normalization **after** convolutions
+        - Bottleneck architecture
+        - ***Performance*** increases while ***parameter*** size decrease
+    - **DenseNet**
+        - DenseNet uses **concatenation** instead of addition
+        - **Dense Block > Transition Block 을 반복**
+
   ## 26boostclass : Computer Vision Aplications
 
   ## 27boostclass : Sequential Model - RNN & Transformer
