@@ -690,15 +690,15 @@ print(game_results_df.describe().loc[["mean", "max", "min"]])
         - 기존 머신러닝 방법에서는 이러한 특징 선택과 모델 학습의 과정이 나누어져 있지만, TabNet에서는 한 번에 가능
         - 특징 선택이 이루어지므로 어떠한 특징인지 설명이 가능함
 
-  ## 12boostclass & 13boostclass : 캐글러에 일단 제출해보자
+## 12boostclass & 13boostclass : 캐글러에 일단 제출해보자
 
   > **Project**
 
-  ## 14boostclass & 15boostclass : 경사하강법
+## 14boostclass & 15boostclass : 경사하강법
 
   > **Project**
 
-  ## 16boostclass : 딥러닝 학습방법 이해하기
+## 16boostclass : 딥러닝 학습방법 이해하기
 
    - **비선형모델, 신경망(neural network)**
      - **O** (n x p) **X** (n x d) **W**(d x p) = **b** **(n x p)**  : d개의 변수로 p개의 선형모델을 만들어서 p개의 잠재변수를 설명하는 모델을 상상해 볼 수 있음
@@ -717,7 +717,7 @@ print(game_results_df.describe().loc[["mean", "max", "min"]])
       - 각 층 패러미터의 그레디언트 벡터는 윗층부터 역순으로 계산하게 됨
       - 역전파 알고리즘은 합성함수 미분법인 **연쇄법칙(chain-rule) 기반 자동 미분(auto-differentiation)을 사용함**
       
-  ## 20boostclass & 21boostclass : 딥러닝 기초
+## 20boostclass & 21boostclass : 딥러닝 기초
 
     - **딥러닝 기본 용어 설명**
       - 인공지능 : 사람의 지능을 모방 **>** 머신러닝  : data로 접근 **>** **딥러닝 : neural networks 구조 활용**
@@ -727,7 +727,7 @@ print(game_results_df.describe().loc[["mean", "max", "min"]])
           - the **loss function** that quantifies the badness of the model
           - the **algorithm** to adjust the parameters to minimize the loss
 
-  ## 22boostclass & 23boostclass : 최적화
+## 22boostclass & 23boostclass : 최적화
 
     - **최적화의 주요 용어 정리하기**
       - **Generalization**
@@ -773,11 +773,11 @@ print(game_results_df.describe().loc[["mean", "max", "min"]])
           - Batch normalization compute the empirical mean and variance independently for each dimension (layers) and normalize
           - There are different variances of normalization
             
-  ## 23boostclass & 24boostclass : 2-layer 인공신경망 구하기
+## 23boostclass & 24boostclass : 2-layer 인공신경망 구하기
 
   > project
 
-  ## 25boostclass : CNN - Convloution은 무엇인가?
+## 25boostclass : CNN - Convloution은 무엇인가?
 
   - **Convolutional Neural Networks은 무엇인가?**
       - CNN consists of convolution layer, pooling layer, and fully connected layer
@@ -828,12 +828,32 @@ print(game_results_df.describe().loc[["mean", "max", "min"]])
           - DenseNet uses **concatenation** instead of addition
           - **Dense Block > Transition Block 을 반복**
 
-  ## 26boostclass : Computer Vision Aplications
+## 26boostclass : Computer Vision Aplications
 
-  ## 27boostclass : Sequential Model - RNN & Transformer
+    - **Semantic Segmentation**
+    - **Fully Convolution Network**
+        - Transforming fully connected layers into convolution layers enables a classification net to output a heat map.
+        - While FCN can run with inputs of any size, the output dimensions are typically reduced by subsampling.
+        - So we need a way to connect the coarse output to the dense pixels.
+    - **Deconvolution (conv transpose)**
+    - **Detection**
+        - **R-CNN**
+        - **SPPNet**
+            - CNN runs once
+        - **Faster R-CNN**
+            - Region Proposal Network + Fast R-CNN
+            - Region Proposal Network
+                - 9 : Three different region sizes with three different ratios
+                - 4 : four bounding box regression parameters
+                - 2 : box classification
+        - **YOLO**
+            - YOLO(v1) is an extremely fast object detection algorithm
+            - It simultaneously predict predicts multiple bounding boxes and class probabilities.
 
-  ## 28boostclass : Generative Models
+## 27boostclass : Sequential Model - RNN & Transformer
+
+## 28boostclass : Generative Models
   
-  ## 29boostclass : 딥러닝 모델 구현하기
+## 29boostclass : 딥러닝 모델 구현하기
 
   > project
