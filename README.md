@@ -719,41 +719,41 @@ print(game_results_df.describe().loc[["mean", "max", "min"]])
       
 ## 20boostclass & 21boostclass : 딥러닝 기초
 
-    - **딥러닝 기본 용어 설명**
-      - 인공지능 : 사람의 지능을 모방 **>** 머신러닝  : data로 접근 **>** **딥러닝 : neural networks 구조 활용**
-      -  **딥러닝의 주요 요소 4가지**
-          - the **data** that the model can learn from
-          - the **model** how to transform the data
-          - the **loss function** that quantifies the badness of the model
-          - the **algorithm** to adjust the parameters to minimize the loss
+- **딥러닝 기본 용어 설명**
+   - 인공지능 : 사람의 지능을 모방 **>** 머신러닝  : data로 접근 **>** **딥러닝 : neural networks 구조 활용**
+   -  **딥러닝의 주요 요소 4가지**
+      - the **data** that the model can learn from
+      - the **model** how to transform the data
+      - the **loss function** that quantifies the badness of the model
+      - the **algorithm** to adjust the parameters to minimize the loss
 
 ## 22boostclass & 23boostclass : 최적화
 
-    - **최적화의 주요 용어 정리하기**
-      - **Generalization**
-      - Training error와 Test error의 차이
-      - **Under- fitting vs over-fitting**
-          - Over-fitting : 학습 데이터에 대해 잘 동작하지만 테스트 데이터에 대해서는 잘 동작하지 않는 현상
-      - **Cross validation**
-          - Cross-validation is a model validation technique for assessing how the model will generalize to an independent (test) data set
-      - **Bias-Variance tradeoff**
-      - **Bootstrapping**
-          - Bootstrapping is any test or metric that uses random sampling with replacement
-      - **Bagging and boosting**
-          - Bagging ( Bootstrapping aggregating)
-              - Multiple models are being trained with bootstrapping
-              - ex) Base classifiers are fitted on random subset where individual predictions are aggregated(voting or averaging)
-          - Boosting
-              - It focuses on specific training samples that are hard to classify
-              - A strong model is built by combining weak learners in sequence where each learner learns from the mistakes of the previous weak learner
-    - **Gradient Descent Methods**
+ - **최적화의 주요 용어 정리하기**
+    - **Generalization**
+       - Training error와 Test error의 차이
+    - **Under- fitting vs over-fitting**
+      - Over-fitting : 학습 데이터에 대해 잘 동작하지만 테스트 데이터에 대해서는 잘 동작하지 않는 현상
+    - **Cross validation**
+      - Cross-validation is a model validation technique for assessing how the model will generalize to an independent (test) data set
+   - **Bias-Variance tradeoff**
+   - **Bootstrapping**
+     - Bootstrapping is any test or metric that uses random sampling with replacement
+   - **Bagging and boosting**
+    - Bagging ( Bootstrapping aggregating)
+        - Multiple models are being trained with bootstrapping
+        - ex) Base classifiers are fitted on random subset where individual predictions are aggregated(voting or averaging)
+   - Boosting
+        - It focuses on specific training samples that are hard to classify
+        - A strong model is built by combining weak learners in sequence where each learner learns from the mistakes of the previous weak learner
+ - **Gradient Descent Methods**
       - Stochastic gradient descent
           - Update with the gradient computed from a single sample
       - Mini-batch gradient descent
           - Update with the gradient computed from a subset of data
       - Batch gradient descent
           - Update with the gradient computed from the whole data
-    - **Regularization**
+- **Regularization**
       - **Early stopping**
           - early stopping을 위해 additional validation data가 필요함
       - **Parameter norm penalty**
@@ -830,24 +830,24 @@ print(game_results_df.describe().loc[["mean", "max", "min"]])
 
 ## 26boostclass : Computer Vision Aplications
 
-    - **Semantic Segmentation**
+- **Semantic Segmentation**
     - **Fully Convolution Network**
         - Transforming fully connected layers into convolution layers enables a classification net to output a heat map.
         - While FCN can run with inputs of any size, the output dimensions are typically reduced by subsampling.
         - So we need a way to connect the coarse output to the dense pixels.
     - **Deconvolution (conv transpose)**
-    - **Detection**
-        - **R-CNN**
-        - **SPPNet**
-            - CNN runs once
-        - **Faster R-CNN**
-            - Region Proposal Network + Fast R-CNN
-            - Region Proposal Network
-                - 9 : Three different region sizes with three different ratios
-                - 4 : four bounding box regression parameters
-                - 2 : box classification
-        - **YOLO**
-            - YOLO(v1) is an extremely fast object detection algorithm
+- **Detection**
+  - **R-CNN**
+  - **SPPNet**
+      - CNN runs once
+  - **Faster R-CNN**
+      - Region Proposal Network + Fast R-CNN
+      - Region Proposal Network
+          - 9 : Three different region sizes with three different ratios
+          - 4 : four bounding box regression parameters
+          - 2 : box classification
+  - **YOLO**
+    - YOLO(v1) is an extremely fast object detection algorithm
             - It simultaneously predict predicts multiple bounding boxes and class probabilities.
 
 ## 27boostclass : Sequential Model - RNN & Transformer
