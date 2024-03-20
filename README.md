@@ -15,9 +15,323 @@
 
 ## 01boostclass : numpy & pandas
 
-- **numpy**
+```python
+### [TODO] 코드 구현 1 : 행렬곱 연산
+##본격적으로 Numpy와 친해지기 위해서 다양한 연산을 연습해볼 예정입니다. 
+##랜덤으로 무작위 데이터를 가진 5x3 행렬과 3x2 행렬을 numpy array로 만든 후, 행열곱 연산을 진행해봅시다. 
+##그리고 그 결과를 출력해봅시다.
+import numpy as np
 
-- **pandas**
+## 코드시작 ##
+
+matrix_a = np.random.rand(5,3)
+
+matrix_b = np.random.rand(3,2)
+
+result_matrix = np.dot(matrix_a,matrix_b)
+
+## 코드종료 ##
+print(result_matrix, result_matrix.shape)
+```
+
+- **numpy 가져오기**
+
+```python
+import numpy as np
+```
+
+- **numpy 배열 생성 : np.array()**
+
+```python
+x = np.array([1,2,3,4])
+```
+
+- **산술 연산**
+
+```python
+x = np.array([1,2,3,4])
+y = np.array([5,6,7,8])
+
+print(x+y)
+print(x-y)
+print(x/y)
+```
+
+- **N차원 배열**
+
+```python
+x = np.array([1,2],[3,4])
+y = np.array([5,6],[7,8])
+
+print(x.shape)    # 배열 형상 보기
+print(np.ndim(x)) # 배열 차원 보
+```
+
+→ shape이 같은 행렬끼리 연산 가능
+
+- **브로드캐스트**
+    
+    : shape이 다른 행렬끼리의 연산
+    
+
+```python
+x = np.array([[1, 2], [3, 4]])
+y = np.array([10, 20])
+
+print(x*y)
+```
+
+- **원소 접근하기**
+
+```python
+x = np.array([[1, 2], [3, 4]])
+
+print(x[0]) # array([1, 2])
+print(x[0][1]) # 2.0
+```
+
+- **그래프 그리기**
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.arange(0, 3, 0.1) # 0부터 1까지 0.1 간격으로 생성
+y = np.cos(x)            # cos 그래프
+
+plt.plot(x, y)
+plt.show()
+```
+
+- **그래프 이름과 축 추가하기**
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.arange(0, 6, 0.1) # 0부터 1까지 0.1 간격으로 생성
+y1 = np.sin(x)
+y2 = np.cos(x)
+
+plt.plot(x, y1, label="sin")
+plt.plot(x, y2, linestyle="--", label="cos")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("sin & cos")
+plt.legend() # 범례추가
+plt.show()
+```
+
+- **행렬의 곱**
+
+```python
+x = np.array([[1, 2], [3, 4]])
+y = np.array([[4, 5], [6, 7]])
+
+print(np.dot(x, y))
+```
+
+- **랜덤 행렬 생성**
+
+```python
+x = np.random.rand(2,2)  # 2x2 행렬 랜덤 생성
+y = np.random.rand(3,2)  # 3x3 행렬 랜덤 생성
+```
+
+```python
+## [TODO] 코드 구현 2 : concatenate 연산
+## 그 다음으로는 numpy에서 자주 사용하는 concatenate 연산을 해보겠습니다. 
+## 다음 array를 사용해 axis 가 0과 1일때의 concatenate 연산을 각각 구해보세요.
+
+*   첫번째 array : [[5,7], [9,11]]
+*   두번째 array : [[2,4], [6,8]]
+
+import numpy as np
+
+## 코드 시작
+
+x = np.array(([5,7],[9,11]))
+y = np.array(([2,4],[6,8]))
+
+## 코드 종료
+print(np.concatenate((x,y),axis = 0), np.concatenate((x,y),axis = 1))
+```
+
+- **concatentate 메소드 (배열 합치기) + axis(축)**
+
+: concatenate 메소드는 선택한 축(axis)의 방향으로 배열을 연결해주는 메소드
+
+```python
+## 1차원 배열에서 concatenate & asix
+import numpy as np
+x1 = np.array([1,2,3])
+y1 = np.array([4,5,6])
+np.concatenate((x1,y1),axis= 0)    ## asix = 0은 직선, 1은 안됨
+
+## 2차원 배열에서 concatenate & axis
+x2 = np.array([1,2,3],[10,20,30])
+y2 = np.array([4,5,6],[40,50,60])
+np.concatenate((x2,y2), axis = 1   ## asix = 0은 행(위->아래) 방향, 1은 열(좌->우)
+
+## 3차원 배열
+## axis = 0은 높이방향, 1은 행 방향, 2는 열 방향
+
+```
+
+```python
+## [TODO] 코드 구현 3 : Series 코드 완성하기 - 조건에 따른 목록 재구성
+## 다음의 재고 목록을 사용해 Pandas 라이브러리의 Series 형태를 만들어보세요. 
+## 그리고 데이터의 10 이상 20 이하의 데이터만 골라 출력해봅시다.
+<재고 목록>
+* HDD : 19개
+* SDD : 11개
+* USB : 5개
+* CLOUD : 97개
+```
+
+- **Pandas 불러오기**
+
+```python
+import pandas as pd
+```
+
+- **Series 자료구조**
+
+```python
+## 행의 이름(index), 열의 이름(name)
+s = pd.Series(data, index = index, name = name)
+```
+
+- **Series 생성하기 : list & dict**
+
+```python
+## list
+s = pd.Series(['KIM','SO','MIN'])
+
+##dict
+s = pd.Series({'KIM':20,'SO': 28, 'MIN': 36})
+```
+
+- **Series 속성 : index & values**
+
+```python
+s.index
+s.values
+```
+
+- **Series 인덱싱**
+
+```python
+s['KIM'] = 55
+s
+```
+
+- **Series 부등식(조건)**
+
+```python
+## 20보다 크고 30보다 작은 데이터
+s[(s>20) & (s<30)]
+```
+
+```python
+##[TODO] 코드 구현 4 : dataframe 코드 완성하기 - 야채과일 가격 계산하기
+##다음과 같이 야채와 과일 목록이 정리된 데이터가 있습니다. 
+##이 두 데이터를 따로 보기엔 효율성이 떨어져 1개로 합쳐 보려 합니다. 
+## 각 표에 정리된 데이터를 각각 하나의 데이터 프레임으로 생성한 뒤, 하나로 결합해보세요. 
+## 그리고 'type'을 이용해 데이터를 정렬하고, 가장 비싼 야채와 가장 비싼 과일의 가격 합을 구해보세요.
+import pandas as pd
+
+## 코드시작 ##
+frame1 = {
+    'name' : ['cherry','mango','potato','onion'],
+    'type' : ['fruit','fruit','vegetable','vegetable'],
+    'price' : [100,110,60,80]
+}
+frame1_df = pd.DataFrame(frame1)
+               
+frame2 = {
+    'name' : ['pepper','carrot','banana','kiwi'],
+    'type' : ['vegetable','vegetable','fruit','fruit'],
+    'price' : [50,70,90,120]
+}
+frame2_df = pd.DataFrame(frame2)
+
+combined_df = pd.concat([frame1_df, frame2_df])
+
+sorted_df = combined_df.sort_values(by ='type')
+
+Top_vegetable_price = sorted_df.loc[sorted_df['type'] == 'vegetable','price'].max()
+Top_fruit_price = sorted_df.loc[sorted_df['type'] == 'fruit', 'price'].max()
+sum_of_Top = Top_vegetable_price + Top_fruit_price
+
+## 코드종료 ##
+print(sum_of_Top)
+```
+
+- **Dataframe**
+
+: Series들을 하나의 열로 취급한 집합 
+
+```python
+import pandas as pd
+## 생성 방법(list)
+frame = pd.DataFrame([[1,2,3],[4,5,6],[7,8,9]])
+frame
+
+## Dictionary 이용
+data = {
+      'age' : [20,23,48],
+      'height' : [183,192,175],
+      'weight'  : [77,83,65]
+}
+indexName = ['슈퍼맨','스파이더맨','배트맨']
+frame = pd.DataFrame(data,index = indexName)
+frame
+```
+
+- **Dataframe 조회 방법**
+
+```python
+## 열 조회
+print(" 0열 조회 -1 ")
+print(frame['age'])
+
+print(frame['age'][1])   ## or print(frame.age[1]) 특정 값 조회
+
+## 행 조회 : loc, iloc 사용
+print(frame.loc['배트맨'] 
+print(frmae.iloc[0])
+```
+
+```python
+##[TODO] 코드 구현 5 : dataframe 코드 완성하기 - 점수 최댓값, 최솟값 출력하기
+5명의 플레이어가 게임을 진행한 결과를 전달받았습니다. 총 5개의 라운드를 진행하여 각 참여자당 5개의 점수를 받았습니다. 아래에 주어진 데이터를 dataframe의 형태로 만들어 보세요. 그리고 각 라운드의 최댓값, 최솟값, 평균값을 구해 출력해봅시다.
+
+참여자의 이름을 인덱스로 활용해보세요.
+결과 출력은 dataframe의 describe() 를 활용해보세요.
+<플레이어별 게임 결과>
+Sue : 55, 65, 60, 66, 57
+Ryan : 64, 77, 71, 79, 67
+Jay : 88, 81, 79, 89, 77
+Jane : 45, 35, 30, 46, 47
+Anna : 91, 96, 90, 97, 99
+
+import pandas as pd
+
+## 코드시작 ##
+data = {
+    'Sue': [55, 65, 60, 66, 57],
+    'Ryan': [64, 77, 71, 79, 67],
+    'Jay': [88, 81, 79, 89, 77],
+    'Jane': [45, 35, 30, 46, 47],
+    'Anna': [91, 96, 90, 97, 99]
+}
+game_results_df = pd.DataFrame(data)
+
+game_results_df = game_results_df.rename(columns={'Sue': 'round1', 'Ryan': 'round2', 'Jay': 'round3', 'Jane': 'round4', 'Anna': 'round5'})
+## 코드종료 ##
+print(game_results_df.describe().loc[["mean", "max", "min"]])
+```
 
 ## 02boostclass : 정형데이터 & 정형데이터 분류 베이스라인 모델 1
 
