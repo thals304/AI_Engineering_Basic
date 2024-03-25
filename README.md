@@ -852,6 +852,51 @@ print(game_results_df.describe().loc[["mean", "max", "min"]])
 
 ## 27boostclass : Sequential Model - RNN & Transformer
 
+  - **Sequential Model**
+      - **Autoregressive model**
+          - fix the past timespan
+      - **Markov model (first-order autoregressive model)**
+          - 나의 현재는 과거에만 dependent !
+          - Easy to express the joint distribution
+      - **Latent autoregressive model**
+          - summary of the past
+  - **Recurrent Neural Network**
+      - Short-term dependencies
+      - **Long**-tern dependencies
+  - **Long Short Term Memory**
+      - core idea
+          - **Forget Gate** : decide which information to throw away
+          - **Input Gate** : decide with information to store in the cell state
+  - **Gated Recurrent Unit**
+      - Simpler architecture with two  gates(reset gate and update gate)
+      - No cell state,  just hidden state
+
+  - **Transformer**
+    - Transformer is  the first sequence transduction model based entirely on attention
+    - From a bird’s-eye view, this is what the Transformer does for machine translation tasks
+    - If we glide down a little bit, this is what the Transformer does
+    - The **Self-Attention** in both encoder and decoder is the cornerstone of Transformer.
+        - First, we represent each word with embedding vectors
+        - Then, Transformer encodes each word to feature vectors with **Self-Attention**
+        - Suppose we are encoding two words : **Thinking** and **Machines**
+        - Self-Attention at a high level
+            - The animal didn’t cross the  street because **it** was too tired
+        - Suppose we are encoding the first word : **Thinking** given ‘Thinking’ and ‘Machines’.
+        - Then, we compute the **attention weights** by scaling followed by softmax.
+        - Calculating Q, K, and V from X in a matrix form
+        - Multi-headed attention (MHA) allows Transformer to focus on different positions
+        - If eight heads are used, we end up getting eight different sets of encoded vectors (**attention heads**)
+        - We simply pass them through additional (learnable) linear map
+        - Why do we need positional encoding ?
+            - n개의 단어를 sequential 하게 넣어줬다고 치지만 sequential한 정보가 이 안에 포함되어 있지 않음
+            - This is the case for 512-dimensional encoding
+            - Recent update on positional encoding
+        - Now, let’s take a look at decoder side
+        - Transformer transfers **key**(K) and **value**(V) of the topmost encoder to the decoder
+        - The output sequence is generated in an autoregressive manner
+        - In the **decoder**, the **self-attention layer** is only allowed to attend to earlier position in the output sequence which is done by masking future position before the softmax step
+        - The “**Encoder-Decoder Attention**” layer works just like multi-headed self-attention, except it creates its Queries matrix from **the layer below it** and takes the **Keys** and **Values** form the encoder stack.
+        - The final layer converts the stack of decoder outputs to the distribution over words
 ## 28boostclass : Generative Models
   
 ## 29boostclass : 딥러닝 모델 구현하기
