@@ -898,6 +898,64 @@ print(game_results_df.describe().loc[["mean", "max", "min"]])
         - The “**Encoder-Decoder Attention**” layer works just like multi-headed self-attention, except it creates its Queries matrix from **the layer below it** and takes the **Keys** and **Values** form the encoder stack.
         - The final layer converts the stack of decoder outputs to the distribution over words
 ## 28boostclass : Generative Models
+
+- **Generative Models 1**
+    - We want to learn a probability distribution p(x) such that
+        - **Generation** : If we sample x ~ p(x), x should look like a dog **(sampling)**
+        - **Density estimation** : p(x) should be high if x looks like a dog, and low otherwise **(anomaly detection)**
+            - Also known as, explicit models.
+        - **Unsupervised representation learning** : We should be able to learn these images have in common **(feature learning)**
+    - **Basic Discrete Distributions**
+        - **Bernoulli distribution** : (biased) coin flip
+        - **Categorical distribution** : (biased) m-side dice
+    - **Conditional Independence**
+        - **Chain rule**
+            - p(x1) : 1 parameter
+            - p(x2|x1) : 2 parameters ( one per p(x2|x1 = 0) and one per p(x2|x1 = 1))
+            - p(x3|x1,x2) : 4 parameters
+            - Hence, 1 + 2 + 2^2 + …. + 2^n -1 , which is the same as before
+        - **Bayes’ rule**
+        - **Conditional independence**
+            - p(x1,….,xn) = p(x1)p(x2|x1)….p(xn|xn-1)
+            - 2n - 1 parameters
+            - Hence, by leveraging the Markov assumption, we get exponential reduction on the number of parameters
+            - **Auto-regressive models** leverage this conditional independency
+        - **Auto-regressive Model**
+            - How can we parametrize **p(x)** ?
+                - Let’s use the **chain rule** to factor the joint distribution
+                - p(x1:784) = p(x1)p(x2|x1)p(x3|x1.2)..
+                - This if called an **auto-regressive model**
+                - Note that we need an ordering of all random variables
+            - **NADE : Neural Autoregressive Density Estimator**
+                - **NADE** is an **explicit** model that can compute the **density** of the given inputs
+                - How can we compute the **density** of the given images?
+                    - Suppose we have a binary image with 784 binary pixels
+                    - Then, the joint probability is computed by
+                        
+                        p(x1,….x784) = p(x1)p(x2|x1)…p(x784|x1:783) 
+                        
+                - In case of modeling continuous random variables, **a mixture of Gaussian** can be used
+            - **Pixel RNN**
+                - We can also use **RNNs** to define an auto-regressive model
+                - There are two model architectures in Pixel RNN based on the **ordering** of chain
+                    - **Row LSTM**
+                    - **Diagonal BiLSTM**
+            
+- **Generative Models 2**
+    - **Variation Auto-encoder**
+        - **Variational inference (VI)**
+            - The goal if VI is to optimize **variational distribution** that best matches the **posterior distribution**
+                - **Posterior distribution**
+                - **Variational distribution**
+            - In particular, we want to find the **variational distribution** that minimizes the KL divergence between the true posterior
+        - **Key limitation**
+            - It is an **intractable** model(hard to evaluate likelihood)
+            - The prior fitting term must be differentiable, hence it is hard to use diverse latent prior distributions
+            - In most cases, we use an isotropic Gaussian
+        - **Adversarial Auto-encoder**
+            - It allows us to use arbitrary latent distributions that we can sample
+    - **GAN**
+        - A two player minimax game between **generator** and **discriminator**
   
 ## 29boostclass : 딥러닝 모델 구현하기
 
